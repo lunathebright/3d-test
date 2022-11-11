@@ -1,5 +1,5 @@
 import { SceneLoader, Vector3 } from "@babylonjs/core";
-import "@babylonjs/loaders/glTF";
+import "@babylonjs/loaders";
 import React, { useEffect, useRef, useState } from "react";
 import {
   ArcRotateCamera,
@@ -10,11 +10,13 @@ import {
 } from "react-babylonjs";
 import * as BABYLON from "babylonjs";
 
-const scenes = {
-  id: 0,
-  root: "./assets/",
-  file: "avatar.glb",
-};
+const scenes = [
+  {
+    id: 0,
+    root: "./assets/",
+    file: "avatar.glb",
+  },
+];
 
 export default function GlbCanvas() {
   const [products, setProducts] = useState(scenes);
@@ -59,23 +61,42 @@ export default function GlbCanvas() {
   };
 
   const main = async (scene) => {
-    const assetContainers = [];
+    SceneLoader.ImportMesh("", "./assets/", "avatar.glb", scene);
 
-    for (let i = 0; i < scenes.length; i++) {
-      const asset = await loadPromise(scenes[i].root, scenes[i].file, scene);
-      assetContainers.push(asset);
-    }
+    // const assetContainers = [];
+
+    // for (let i = 0; i < scenes.length; i++) {
+    //   const asset = await loadPromise(scenes[i].root, scenes[i].file, scene);
+    //   assetContainers.push(asset);
+    // }
+
+    const sphere = BABYLON.MeshBuilder.CreateSphere(
+      "sphere",
+      { diameter: 1, segments: 32 },
+      scene
+    );
+
+    sphere.position.x = -2;
   };
 
   const createScene = (scene, renderCanvas) => {
-    let camera = new BABYLON.ArcRotateCamera(
+    const camera = new BABYLON.ArcRotateCamera(
       "Camera",
-      -Math.PI / 2,
       Math.PI / 2,
-      4,
-      new BABYLON.Vector3(0, 0, 0),
+      Math.PI / 4,
+      150,
+      BABYLON.Vector3.Zero(),
       scene
     );
+
+    // let camera = new BABYLON.ArcRotateCamera(
+    //   "Camera",
+    //   -Math.PI / 2,
+    //   Math.PI / 2,
+    //   4,
+    //   new BABYLON.Vector3(0, 0, 0),
+    //   scene
+    // );
 
     camera.lowerRadiusLimit = 4;
     camera.upperRadiusLimit = 6;

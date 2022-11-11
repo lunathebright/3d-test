@@ -9,9 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@babylonjs/core": "^5.31.2",
     "@babylonjs/gui": "^5.31.2",
-    "@babylonjs/loaders": "^5.31.2",
     "babylonjs": "^5.31.2",
     "globe.gl": "^2.26.8",
     "next": "13.0.2",
@@ -21,6 +19,8 @@
     "react-globe.gl": "^2.22.6"
   },
   "devDependencies": {
+    "@babylonjs/core": "^5.32.1",
+    "@babylonjs/loaders": "^5.32.1",
     "autoprefixer": "^10.4.13",
     "eslint": "8.27.0",
     "eslint-config-next": "13.0.2",
