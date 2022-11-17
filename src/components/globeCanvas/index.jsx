@@ -1,5 +1,5 @@
-import React from "react";
-import Globe from "react-globe.gl";
+import React from 'react';
+import Globe from 'react-globe.gl';
 
 export default function GlobeCanvas() {
   const onClick = (coord) => {

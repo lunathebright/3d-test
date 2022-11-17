@@ -1,6 +1,7 @@
-import Head from "next/head";
-import BabylonCanvas from "../src/components/babylonCanvas";
-import GlbCanvas from "../src/components/glbCanvas";
+import Head from 'next/head';
+import GlbCanvas from '../src/components/glbCanvas';
+// import BabylonCanvas from "../src/components/babylonCanvas";
+// import GlbCanvas from '../src/components/old_glbCanvas';
 // import GlobeCanvas from "../src/components/globeCanvas";
 
 export default function Home() {

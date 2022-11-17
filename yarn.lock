@@ -335,15 +335,23 @@
   "resolved" "https://registry.npmjs.org/axobject-query/-/axobject-query-2.2.0.tgz"
   "version" "2.2.0"
 
-"babylonjs-gltf2interface@^5.22.0":
-  "integrity" "sha512-0m1Qw8B+RXQaF251ApJJZ55hwq+I8dPKs24FFlHneP2+Ozfet0tnM5VapabtNueR/jnn0Ms+wI4CYYg34ofSjQ=="
-  "resolved" "https://registry.npmjs.org/babylonjs-gltf2interface/-/babylonjs-gltf2interface-5.31.2.tgz"
-  "version" "5.31.2"
+"babylonjs-gltf2interface@^5.22.0", "babylonjs-gltf2interface@^5.32.2":
+  "integrity" "sha512-BuAok/F89WmTzjHWqv3USqEnlX0k8asFgI7bngo397NMO60SRFgAKcCoYAuaXv8rFHS7igy+o+MLqwMag/Gp0Q=="
+  "resolved" "https://registry.npmjs.org/babylonjs-gltf2interface/-/babylonjs-gltf2interface-5.32.2.tgz"
+  "version" "5.32.2"
 
-"babylonjs@^5.31.2":
-  "integrity" "sha512-tY7ghuKXygmzc1ks8jX4Xs+HBmCTQeiDpcKCf3e0c+6ipg3/4/VnbImDveMusGgTffY8eloWY51xRVP3l606UQ=="
-  "resolved" "https://registry.npmjs.org/babylonjs/-/babylonjs-5.31.2.tgz"
-  "version" "5.31.2"
+"babylonjs-loaders@^5.32.2":
+  "integrity" "sha512-BZIWW6w5aqEqdjxk0yiIlU5LIzUzQ5fmBsGCIZq6vhBkXuEYOikyQiyXSb+eC12TwP/WnkKSS6wutK19lItPPw=="
+  "resolved" "https://registry.npmjs.org/babylonjs-loaders/-/babylonjs-loaders-5.32.2.tgz"
+  "version" "5.32.2"
+  dependencies:
+    "babylonjs" "^5.32.2"
+    "babylonjs-gltf2interface" "^5.32.2"
+
+"babylonjs@^5.32.2":
+  "integrity" "sha512-xAKwXLv6Gouz4ejWzakmvVkkhjUABZ961hEXIOvuaGMB94/RlDkUGzC0r3jZjmfxjVQ/D50WbkE5vDk+mFtAGg=="
+  "resolved" "https://registry.npmjs.org/babylonjs/-/babylonjs-5.32.2.tgz"
+  "version" "5.32.2"
 
 "balanced-match@^1.0.0":
   "integrity" "sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw=="
@@ -806,7 +814,7 @@
   "resolved" "https://registry.npmjs.org/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.6.0.tgz"
   "version" "4.6.0"
 
-"eslint-plugin-react@^7.31.7":
+"eslint-plugin-react@^7.31.10", "eslint-plugin-react@^7.31.7":
   "integrity" "sha512-e4N/nc6AAlg4UKW/mXeYWd3R++qUano5/o+t+wnWxIf+bLsOaH3a4q74kX3nDjYym3VBN4HyO9nEn1GcAqgQOA=="
   "resolved" "https://registry.npmjs.org/eslint-plugin-react/-/eslint-plugin-react-7.31.10.tgz"
   "version" "7.31.10"
