@@ -9,26 +9,27 @@ export default function GlbCanvas() {
     // environment hdr 설정
     // scene.createDefaultEnvironment();
     // const hdrTexture = BABYLON.CubeTexture.CreateFromPrefilteredData(
-    //   './textures/environment_1.env',
+    //   './textures/environment.env',
     //   scene,
     // );
     // scene.environmentTexture = hdrTexture;
 
-    const reflectionTexture = new BABYLON.HDRCubeTexture(
-      './textures/autoshop_01_1k.hdr',
+    const skybox = BABYLON.MeshBuilder.CreateBox(
+      'skyBox',
+      { size: 10000.0 },
       scene,
-      128,
-      false,
-      true,
-      false,
-      true,
     );
-
-    // const envTexture = BABYLON.CubeTexture.CreateFromPrefilteredData(
-    //   './textures/environment.env',
-    //   scene,
-    // );
-    // scene.environmentTexture = envTexture;
+    const skyboxMaterial = new BABYLON.StandardMaterial('skyBox', scene);
+    skyboxMaterial.backFaceCulling = false;
+    skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture(
+      './textures/environment_autoshop.env',
+      scene,
+    );
+    skyboxMaterial.reflectionTexture.coordinatesMode =
+      BABYLON.Texture.SKYBOX_MODE;
+    skyboxMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
+    skyboxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
+    skybox.material = skyboxMaterial;
 
     BABYLON.SceneLoader.ImportMesh(
       '',
@@ -60,11 +61,10 @@ export default function GlbCanvas() {
 
     const light = new BABYLON.HemisphericLight(
       'HemiLight',
-      new BABYLON.Vector3(0, 0, 1),
+      new BABYLON.Vector3(0, 1, 0),
       scene,
     );
-
-    light.intensity = 1;
+    light.intensity = 20;
 
     return scene;
   };
